@@ -10,6 +10,18 @@ ESERCIZIO 1:
  */
 function fattoriale(n: number): number {
     // scrivi qui il tuo codice
+    n = parseInt(n, 10);
+    if(n >= 0){
+        if(n === 0){
+            return 1;
+        }
+        if(n === 1){
+            return n;
+        }
+        return n * fattoriale(n - 1);
+    }else{
+        throw new Error('n deve essere un numero positivo')
+    }
 }
 
 /*
@@ -25,7 +37,7 @@ ESERCIZIO 2:
  * @param finoA numero di elementi della lista in cui cercare prima di fermarsi
  */
 function cercaFinoA(lista: string[],corrispondenza: string, finoA: number): number {
-    for (var i = 0; i <= finoA; i ++) {
+    for (var i = 0; i < finoA; i++) {
         let item = lista[i];
         if(item == corrispondenza) {
             return i
