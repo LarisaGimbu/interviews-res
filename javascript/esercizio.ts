@@ -11,13 +11,14 @@ ESERCIZIO 1:
  * @param finoA numero di elementi della lista in cui cercare prima di fermarsi
  */
  function cercaFinoA(lista: string[],corrispondenza: string, finoA: number): number {
-    for (var i = 0; i <= finoA; i++) {
+    for (let i = 0; i <= finoA; i++) {
         let item = lista[i];
         if(item == corrispondenza) {
             return i
         }
+        return -1;
     }
-    return -1;
+    
 }
 
 /*
@@ -33,7 +34,14 @@ ESERCIZIO 2:
  * @param n l'intero di cui calcolare il fattoriale
  */
 function fattoriale(n: number): number {
-    // scrivi qui il tuo codice
+    for (let i = 0; i <= n; i++) {
+        let array = [];
+        array.push= i;
+    }
+    
+
+    
+
    
 }
 
