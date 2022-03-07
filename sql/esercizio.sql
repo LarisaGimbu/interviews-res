@@ -33,35 +33,14 @@ create table libri (
     scrivere la/le query sql per recuperare, per ogni libro scritto da un autore nato prima del 2000, tutte le informazioni riguardanti il libro e nome e cognome dell'autore.
 */
 
-select libri.*,
-    autori.nome,
-    autori.cognome
-    from libri
-    join autori on autori.autore_id = libri.id
-    where autori.anno_nascita < 2000;
-
 /* ESERCIZIO 2:
     scrivere la/le istruzione sql per cancellare l'autore Jhon Doe e tutti i suoi libri.
 */
-delete from autori where nome = 'John' and cognome = 'Doe'; -- on cascade vengono cancellati i libri di tale autore
 
 /* ESERCIZIO 3:
     scrivere la/le istruzione sql per cancellare la casa editrice "ACME edizioni" e tutti i suoi libri.
 */
-delete from libri where casa_editrice_id = (select id from case_editrici where nome = 'ACME edizioni');
-delete from case_editrici where nome = 'ACME edizioni';
 
 /* ESERCIZIO 4:
     scrivere la/le query sql per recuperare per ogni autore, nome, cognome, nazionalità e numero di libri scritti.
 */
-
-select autori.nome,
-       autori.cognome,
-       autori.nazionalita,
-       count(libri.id) as numero_libri_scritti
-    from autori
-    join libri 
-     on autori.autore_id = libri.id
-    group by (autori.nome,
-       autori.cognome,
-       autori.nazionalita);
