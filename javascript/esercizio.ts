@@ -11,7 +11,7 @@ ESERCIZIO 1:
  * @param finoA numero di elementi della lista in cui cercare prima di fermarsi
  */
  function cercaFinoA(lista: string[],corrispondenza: string, finoA: number): number {
-    for (var i = 0; i <= finoA; i++) {
+    for (var i = 0; i < finoA; i++) {
         let item = lista[i];
         if(item == corrispondenza) {
             return i
@@ -34,7 +34,11 @@ ESERCIZIO 2:
  */
 function fattoriale(n: number): number {
     // scrivi qui il tuo codice
-   
+   let temp = 1;
+   for(var i=1; i<=n; i++){
+        temp = temp * i;
+   }
+   return temp;
 }
 
 

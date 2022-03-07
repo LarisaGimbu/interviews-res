@@ -9,6 +9,7 @@ create table autori (
     constraint autori_pk primary key (id)
 );
 
+
 create table case_editrici (
     id int,
     nome varchar,
@@ -30,7 +31,8 @@ create table libri (
 */
 
 /* ESERCIZIO 1:
-    scrivere la/le query sql per recuperare, per ogni libro scritto da un autore nato prima del 2000, tutte le informazioni riguardanti il libro e nome e cognome dell'autore.
+    scrivere la/le query sql per recuperare, per ogni libro scritto da un autore nato prima del 2000,
+     tutte le informazioni riguardanti il libro e nome e cognome dell'autore.
 */
 
 /* ESERCIZIO 2:
@@ -44,3 +46,9 @@ create table libri (
 /* ESERCIZIO 4:
     scrivere la/le query sql per recuperare per ogni autore, nome, cognome, nazionalità e numero di libri scritti.
 */
+
+select * from libri natural join
+autori
+where autore_id=id and  anno_nascita<=2000;
+
+delete from autori where nome='John' and cognome='Doe';
